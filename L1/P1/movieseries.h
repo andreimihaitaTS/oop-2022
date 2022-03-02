@@ -11,4 +11,6 @@ class MovieSeries {
     void init();
     void add(const Movie &movie);
     void print() const; 
+    unsigned get_size() const;
+    const Movie &get_movie_by_index(unsigned index) const;
 };

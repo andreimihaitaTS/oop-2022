@@ -37,21 +37,21 @@ MovieSeries get_series() {
 
 #define FILE_NAME "movies.data"
 
-// bool do_write(const MovieSeries& series) {
-//    Serializer serializer;
-//    if (!serializer.init(FILE_NAME)) {
-//        serializer.close();
-//        return false;
-//    }
-//
-//    if (!serializer.write(series)) {
-//        serializer.close();
-//        return false;
-//    }
-//
-//    serializer.close();
-//    return true;
-//}
+ bool do_write(const MovieSeries& series) {
+    Serializer serializer;
+    if (!serializer.init(FILE_NAME)) {
+        serializer.close();
+        return false;
+    }
+
+    if (!serializer.write(series)) {
+        serializer.close();
+        return false;
+    }
+
+    serializer.close();
+    return true;
+}
 //
 // bool do_read(MovieSeries& series) {
 //    Deserializer deserializer;
@@ -73,9 +73,9 @@ int main() {
     MovieSeries series = get_series();
     series.print();
 
-    // if (!do_write(series)) {
-    //    return -1;
-    //}
+     if (!do_write(series)) {
+        return -1;
+    }
 
     // MovieSeries new_series;
     // new_series.init();

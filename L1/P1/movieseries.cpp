@@ -1,4 +1,4 @@
-#include "movieseries.h";
+#include "movieseries.h"
 #include <iostream>
 void MovieSeries::init() {
     size = 0;
@@ -15,3 +15,12 @@ void MovieSeries::print() const {
             << movies[i].get_score() << ' ' << movies[i].get_length() <<'\n';
     }
 }
+
+unsigned MovieSeries::get_size() const {
+    return size;
+}
+
+const Movie& MovieSeries::get_movie_by_index(unsigned index) const {
+    return movies[index];
+}
+
